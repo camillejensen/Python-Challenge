@@ -11,6 +11,7 @@ monthly_changes = []
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
     csv_reader = next(csvreader)
+    csvheader = next(csvreader)
 
     for row in csvreader:
         total_months.append(row[0])
@@ -18,7 +19,7 @@ with open(csvpath) as csvfile:
 
     print(len(total_months))
 
-    total_profits=[int(total_profits) for x in total_profits]
+    total_profits=[int(x) for x in total_profits]
     total_profits_sum=sum(total_profits)
     print(total_profits_sum)
 for i in range(len(total_profits)-1):
